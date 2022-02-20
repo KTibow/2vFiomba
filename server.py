@@ -98,7 +98,9 @@ while True:
         last_state_sent = current_state
         ha.publish(
             "roomba/state",
-            ujson.dumps({"state": current_state, "battery_level": battery_level * 100}),
+            ujson.dumps(
+                {"state": current_state, "battery_level": round(battery_level * 1000) / 10}
+            ),
         )
         print("State:", current_state, "Battery:", battery_level)
     if len(command_queue) > 0:
