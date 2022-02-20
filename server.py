@@ -124,3 +124,4 @@ while True:
             roomba.write(OPCODE_PLAY_SONG + b"\x00")
         else:
             print("Unknown command:", command)
+    time.sleep(0.25)
