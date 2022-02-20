@@ -71,9 +71,13 @@ def wake_roomba():
 
 
 def on_command(client, userdata, message):
-    global command_queue
-    command_queue.append(message.payload.decode("utf-8"))
-    print("Received command: " + message.payload.decode("utf-8"))
+    print("got command")
+    try:
+        global command_queue
+        command_queue.append(message.payload.decode("utf-8"))
+        print("Received command: " + message.payload.decode("utf-8"))
+    except Exception as e:
+        print("Error: " + str(e))
 
 
 command_queue = []
@@ -98,7 +102,7 @@ while True:
         last_state_sent = current_state
         ha.publish(
             "roomba/state",
-            ujson.dumps({"state": current_state, "battery_level": battery_level}),
+            ujson.dumps({"state": current_state, "battery_level": battery_level * 100}),
         )
         print("State:", current_state, "Battery:", battery_level)
     if len(command_queue) > 0:
