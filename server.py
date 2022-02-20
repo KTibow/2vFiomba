@@ -116,12 +116,16 @@ while True:
         elif command == "clean_spot":
             roomba.write(OPCODE_SPOT)
         elif command == "locate":
+            roomba.write(OPCODE_SAFE)
+            time.sleep(0.05)
             roomba.write(
                 OPCODE_STORE_SONG
                 + b"\x00\x0B\x40\x16\x43\x16\x46\x16\x49\x16\x46\x16\x43\x16\x40\x16\x00\x32\x40\x0C\x43\x0C\x40\x0C"
             )  # Among Us
             time.sleep(0.05)
             roomba.write(OPCODE_PLAY_SONG + b"\x00")
+            time.sleep(0.05)
+            roomba.write(OPCODE_START)
         else:
             print("Unknown command:", command)
     time.sleep(0.25)
