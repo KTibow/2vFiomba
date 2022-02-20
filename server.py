@@ -72,7 +72,8 @@ def wake_roomba():
 
 def on_command(client, userdata, message):
     global command_queue
-    command_queue.append(message.payload.decode())
+    command_queue.append(message.payload.decode("utf-8"))
+    print("Received command: " + message.payload.decode("utf-8"))
 
 
 command_queue = []
@@ -81,7 +82,6 @@ last_state_sent = ""
 last_state_check = 0
 ha.subscribe("roomba/command")
 ha.message_callback_add("roomba/command", on_command)
-ha.publish("roomba/status", "online")
 
 print("Let's get into it, shall we?")
 
