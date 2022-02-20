@@ -124,7 +124,11 @@ while True:
             )  # Among Us
             time.sleep(0.05)
             roomba.write(OPCODE_PLAY_SONG + b"\x00")
-            time.sleep(0.05)
+            time.sleep(
+                int.from_bytes(b"\x16", "big") * 7 / 64
+                + int.from_bytes(b"\x32", "big") / 64
+                + int.from_bytes(b"\x0C", "big") * 3 / 64
+            )
             roomba.write(OPCODE_START)
         else:
             print("Unknown command:", command)
