@@ -2,8 +2,7 @@
 Opcodes for the iRobot Create 2.
 """
 
-from typing import Annotated
-
+# from typing import Annotated
 # Opcode = Annotated[bytes, "Opcode in bytes"]
 # Add this back once VS Code shows annotations in the editor
 # https://github.com/microsoft/vscode-python/issues/18551

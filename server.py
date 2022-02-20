@@ -20,7 +20,7 @@ ha.connect("homeassistant.local")
 print("*ahem*")
 
 
-def to_bytes(number):
+def to_bytes(number: int) -> bytes:
     return number.to_bytes(1, "big")
 
 
