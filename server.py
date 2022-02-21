@@ -3,7 +3,6 @@ print("We'll Be Right Back")
 import time
 
 import paho.mqtt.client as mqtt
-import paho.mqtt.publish as publish
 import serial, ujson
 
 from interface import *
@@ -27,13 +26,17 @@ def find_state():
     roomba.read_all()
     roomba.write(
         OPCODE_SEND_SENSORS
-        + to_bytes(6)  # 6 sensors
-        + to_bytes(34)  # Is it charging?
-        + to_bytes(56)  # Is the main brush on?
-        + to_bytes(54)  # Is the left wheel on?
-        + to_bytes(55)  # Is the right wheel on?
-        + to_bytes(25)  # How charged is the battery?
-        + to_bytes(26)  # How charged can the battery be?
+        + bytes(
+            [
+                6,  # 6 sensors
+                34,  # Is it charging?
+                56,  # Is the main brush on?
+                54,  # Is the left wheel on?
+                55,  # Is the right wheel on?
+                25,  # How charged is the battery?
+                26,  # How charged can the battery be?
+            ]
+        )
     )
     time.sleep(0.025)
     sensor_statuses = (
@@ -122,15 +125,38 @@ while True:
             time.sleep(0.05)
             roomba.write(
                 OPCODE_STORE_SONG
-                + b"\x00\x0B\x40\x16\x43\x16\x46\x16\x49\x16\x46\x16\x43\x16\x40\x16\x00\x32\x40\x0C\x43\x0C\x40\x0C"
+                + bytes(
+                    [
+                        0,
+                        11,
+                        64,
+                        22,
+                        67,
+                        22,
+                        70,
+                        22,
+                        73,
+                        22,
+                        70,
+                        22,
+                        67,
+                        22,
+                        64,
+                        22,
+                        0,
+                        50,
+                        64,
+                        12,
+                        67,
+                        12,
+                        64,
+                        12,
+                    ]
+                )
             )  # Among Us
             time.sleep(0.05)
             roomba.write(OPCODE_PLAY_SONG + b"\x00")
-            time.sleep(
-                int.from_bytes(b"\x16", "big") * 7 / 64
-                + int.from_bytes(b"\x32", "big") / 64
-                + int.from_bytes(b"\x0C", "big") * 3 / 64
-            )
+            time.sleep(22 * 7 / 64 + 50 / 64 + 12 * 3 / 64)
             roomba.write(OPCODE_START)
         else:
             print("Unknown command:", command)

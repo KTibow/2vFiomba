@@ -1,0 +1,23 @@
+[
+  {
+    "encoder_delta": 5,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": true,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 10,
+    "degrees_turned": -30,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": true
+  },
+  {
+    "encoder_delta": -10,
+    "degrees_turned": 30,
+    "light_bumper": true,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  }
+]
