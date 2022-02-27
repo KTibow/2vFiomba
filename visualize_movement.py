@@ -26,20 +26,20 @@ with open("movement.json") as f:
     turtle.home()
     for movement_step in movement:
         turtle.color("black")
-        turtle.pensize(10)
+        turtle.pensize(5)
         turtle.pendown()
         turtle.setheading(turtle.heading() + movement_step["degrees_turned"])
-        turtle.forward(movement_step["encoder_delta"] * 20)
+        turtle.forward(movement_step["encoder_delta"] / 50)
         turtle.penup()
         turtle.update()
         if movement_step["bumper_wheel_drop"]:
             turtle.color(1, 0.4, 0.4)
-            turtle.dot(20)
+            turtle.dot(10)
         elif movement_step["cliff"]:
             turtle.color(1, 0.4, 1)
-            turtle.dot(20)
+            turtle.dot(10)
         elif movement_step["light_bumper"]:
             turtle.color(1, 1, 0.4)
-            turtle.dot(20)
+            turtle.dot(10)
 
 turtle.done()
