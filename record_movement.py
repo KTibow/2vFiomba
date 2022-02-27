@@ -33,7 +33,7 @@ def wake_roomba():
 last_left_encoder = None
 last_right_encoder = None
 
-wake_roomba()
+
 while True:
     roomba.write(
         OPCODE_SEND_SENSORS
@@ -52,7 +52,7 @@ while True:
             ]
         )
     )
-    time.sleep(0.025)
+    time.sleep(0.05)
     sensor_statuses = (
         int.from_bytes(roomba.read(2), "big"),
         int.from_bytes(roomba.read(2), "big"),
@@ -64,14 +64,21 @@ while True:
         int.from_bytes(roomba.read(1), "big"),
         int.from_bytes(roomba.read(1), "big"),
     )
-    if sensor_statuses[0] < last_left_encoder:
-        last_left_encoder -= 0x10000
-    if sensor_statuses[1] < last_right_encoder:
-        last_right_encoder -= 0x10000
+    print(sensor_statuses)
+    if not any(sensor_statuses):
+        print("no resp")
+        wake_roomba()
+        continue
+    if last_left_encoder is None or last_right_encoder is None:
+        last_left_encoder = sensor_statuses[0]
+        last_right_encoder = sensor_statuses[1]
+        continue
     encoder_delta = (sensor_statuses[0] - last_left_encoder) + (
         sensor_statuses[1] - last_right_encoder
     )
     degrees_turned = sensor_statuses[2]
+    if degrees_turned > 0x8000:
+        degrees_turned = degrees_turned - 0x10000
     light_bumper = sensor_statuses[3] > 0
     cliff = (
         sensor_statuses[4] > 0
@@ -80,11 +87,15 @@ while True:
         or sensor_statuses[7] > 0
     )
     bumper_wheel_drop = sensor_statuses[8] > 0
+    try:
+        with open("movement.json") as orig_f:
+            movement_history = orig_f.read()
+            movement_history = ujson.loads(movement_history)
+    except Exception as e:
+        print("error :/")
+        print(e)
+        movement_history = []
     with open("movement.json", "w") as f:
-        try:
-            movement_history = ujson.load(f)
-        except Exception:
-            movement_history = []
         movement_history.append(
             {
                 "encoder_delta": encoder_delta,
@@ -94,7 +105,8 @@ while True:
                 "bumper_wheel_drop": bumper_wheel_drop,
             }
         )
-        ujson.dump(movement_history, f)
+        ujson.dump(movement_history, f, indent=2)
+        print(movement_history)
     last_left_encoder = sensor_statuses[0]
     last_right_encoder = sensor_statuses[1]
     time.sleep(0.5)

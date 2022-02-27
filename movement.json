@@ -1,22 +1,365 @@
 [
   {
-    "encoder_delta": 5,
+    "encoder_delta": 0,
     "degrees_turned": 0,
     "light_bumper": false,
-    "cliff": true,
+    "cliff": false,
     "bumper_wheel_drop": false
   },
   {
-    "encoder_delta": 10,
-    "degrees_turned": -30,
+    "encoder_delta": 0,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 0,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 3,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 0,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 0,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 0,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 83,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 572,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 576,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 593,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 595,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 805,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 787,
+    "degrees_turned": -2,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 800,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 796,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 786,
+    "degrees_turned": -2,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 807,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 693,
+    "degrees_turned": 0,
+    "light_bumper": true,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 89,
+    "degrees_turned": -28,
+    "light_bumper": true,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 50,
+    "degrees_turned": -42,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": -9,
+    "degrees_turned": -65,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 438,
+    "degrees_turned": -51,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 437,
+    "degrees_turned": -49,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 723,
+    "degrees_turned": -11,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 784,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 802,
+    "degrees_turned": -2,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 806,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 782,
+    "degrees_turned": -2,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 803,
+    "degrees_turned": -2,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 806,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 784,
+    "degrees_turned": -2,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 807,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 805,
+    "degrees_turned": -2,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 782,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 806,
+    "degrees_turned": -2,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 781,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 827,
+    "degrees_turned": -2,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 784,
+    "degrees_turned": -2,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 807,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 806,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 801,
+    "degrees_turned": -2,
     "light_bumper": false,
     "cliff": false,
     "bumper_wheel_drop": true
   },
   {
-    "encoder_delta": -10,
-    "degrees_turned": 30,
+    "encoder_delta": -130,
+    "degrees_turned": 19,
     "light_bumper": true,
+    "cliff": false,
+    "bumper_wheel_drop": true
+  },
+  {
+    "encoder_delta": -92,
+    "degrees_turned": 44,
+    "light_bumper": true,
+    "cliff": false,
+    "bumper_wheel_drop": true
+  },
+  {
+    "encoder_delta": -176,
+    "degrees_turned": -11,
+    "light_bumper": true,
+    "cliff": true,
+    "bumper_wheel_drop": true
+  },
+  {
+    "encoder_delta": 1,
+    "degrees_turned": 0,
+    "light_bumper": true,
+    "cliff": true,
+    "bumper_wheel_drop": true
+  },
+  {
+    "encoder_delta": 0,
+    "degrees_turned": 0,
+    "light_bumper": true,
+    "cliff": false,
+    "bumper_wheel_drop": true
+  },
+  {
+    "encoder_delta": 0,
+    "degrees_turned": 0,
+    "light_bumper": true,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 0,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 0,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 0,
+    "degrees_turned": 0,
+    "light_bumper": false,
+    "cliff": false,
+    "bumper_wheel_drop": false
+  },
+  {
+    "encoder_delta": 0,
+    "degrees_turned": 0,
+    "light_bumper": false,
     "cliff": false,
     "bumper_wheel_drop": false
   }
