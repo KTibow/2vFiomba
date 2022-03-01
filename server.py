@@ -3,9 +3,19 @@ print("We'll Be Right Back")
 import time
 
 import paho.mqtt.client as mqtt
-import serial, ujson
+import serial
+import ujson
 
-from interface import *
+from interface import (
+    OPCODE_CLEAN,
+    OPCODE_DOCK,
+    OPCODE_PLAY_SONG,
+    OPCODE_SAFE,
+    OPCODE_SEND_SENSORS,
+    OPCODE_SPOT,
+    OPCODE_START,
+    OPCODE_STORE_SONG,
+)
 
 # Connect to the Roomba and Home Assistant
 roomba = serial.Serial("/dev/ttyUSB0", 115200, timeout=0.1)
@@ -73,8 +83,7 @@ def wake_roomba():
     time.sleep(0.05)
 
 
-def on_command(client, userdata, message):
-    global command_queue
+def on_command(_client, _userdata, message):
     command_queue.append(message.payload.decode("utf-8"))
 
 

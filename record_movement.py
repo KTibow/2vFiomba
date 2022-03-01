@@ -16,7 +16,7 @@ import time
 import serial
 import ujson
 
-from interface import *
+from interface import OPCODE_SEND_SENSORS, OPCODE_START
 
 roomba = serial.Serial("/dev/ttyUSB0", 115200, timeout=0.1)
 
