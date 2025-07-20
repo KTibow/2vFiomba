@@ -1,0 +1,10 @@
+[Unit]
+Description=Fiomba: MQTT and Roomba bridge
+After=network-online.target
+StartLimitIntervalSec=500
+StartLimitBurst=5
+[Service]
+ExecStart=python3 /home/pi/2vFiomba/server.py
+Restart=always
+[Install]
+WantedBy=multi-user.target
